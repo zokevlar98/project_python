@@ -24,7 +24,6 @@ def calculate_file_hash(file_path, hash_type, queue):
 			file_hash = hashlib.sha512(content).hexdigest()
 		else:
 			raise ValueError("Invalid hash type selected.")
-
 		queue.put(file_hash)
 	except Exception as e:
 		queue.put(("error", str(e)))
