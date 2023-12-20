@@ -32,9 +32,7 @@ if __name__ == '__main__':
 	file_path = input("Enter the path to the file: ").strip('\u202a')  # Strip the Unicode character
 	hash_type = input("Enter the hash type (md2, md4, md5, sha1, sha224, sha256, sha384, sha512): ")
 	reference_hash = input("Enter the reference hash: ")
-
 	queue = Queue()
-
 	process = Process(target=calculate_file_hash, args=(file_path, hash_type, queue))
 	process.start()
 	process.join()
